@@ -1,0 +1,268 @@
+body {
+	margin: 0 auto;
+	font-family: Arial, Helvetica, sans-serif;
+	background: #fafafa;
+}
+/* =================== */
+/*	HEADER SECTION */
+/* =================== */
+
+header {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 54px;
+	background: white;
+	border-bottom: 1px solid #dbdbdb;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+.menu-options {
+	display: grid;
+	grid-template-columns: 200px 1fr 200px;
+	width: 945px;
+}
+.menu-options p {
+	margin: 0;
+}
+.insta-logo {
+	display: flex;
+	align-items: center;
+}
+.insta-logo figure {
+	margin: 0;
+}
+.insta-logo img {
+	width: 103px;
+	height: 29px;
+	vertical-align: top;
+}
+.menu-options .search-box {
+	align-self: center;
+	justify-self: center;
+}
+.menu-options .search input {
+	border-radius: 3px;
+	border: 1px solid #dbdbdb;
+	background: #fafafa;
+	outline: 0;
+	color: #dbdbdb;
+	text-align: center;
+	font-size: 14px;
+	height: 28px;
+	min-width: 100px;
+	width: 215px;
+	background-image: url('../images/lupa.svg');
+	background-size: 14px 14px;
+	background-repeat: no-repeat;
+	background-position-x: 65px;
+	background-position-y: center;
+}
+.login-buttons {
+	align-self: center;
+}
+.login-buttons button {
+	padding: 0;
+	cursor: pointer;
+}
+.login-buttons .login {
+	background: #0095f6;
+	height: 30px;
+	width: 110px;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	border: 0;
+	border-radius: 5px;
+}
+.login-buttons .register {
+	border: 0;
+	background: white;
+	font-size: 14px;
+	color: #009af8;
+	font-weight: bold;
+}
+/* =================== */
+/*	PROFILE SECTION */
+/* =================== */
+.profile {
+	width: 945px;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr 160px 160px 160px 160px;
+	grid-template-rows: repeat(3, 70px);
+}
+.profile p {
+	margin: 0;
+}
+.profile-picture {
+	grid-row: span 3;
+	margin: 0;
+	justify-self: center;
+	align-self: center;
+}
+.profile-picture .picture {
+	border-radius: 50%;
+	width: 150px;
+}
+.user-name {
+	grid-column: span 2;
+	justify-self: left;
+	align-self: flex-end;
+}
+.user-name h2 {
+	margin: 0;
+	font-weight: 100;
+	letter-spacing: 2px;
+}
+.edit-button {
+	justify-self: left;
+	align-self: flex-end;
+}
+.edit-button button {
+	border: 1px solid #dbdbdb;
+	background: white;
+	height: 35px;
+	width: 90px;
+	padding: 5px;
+	box-sizing: border-box;
+	border-radius: 4px;
+	font-weight: bold;
+}
+.user-posts {
+	grid-row: 2;
+	grid-column: 2;
+	justify-self: left;
+	align-self: center;
+}
+.user-followers {
+	grid-row: 2;
+	grid-column: 3;
+	justify-self: left;
+	align-self: center;
+}
+.user-following {
+	grid-row: 2;
+	grid-column: 4;
+	justify-self: left;
+	align-self: center;
+}
+.user-description {
+	grid-row: 3;
+	grid-column: 2 / 6;
+}
+/* =================== */
+/*	POST SECTION */
+/* =================== */
+
+.post-list {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(100px, 293px));
+	justify-content: center;
+	gap: 28px;
+	background: #fafafa;
+	margin: 50px auto;
+	width: 945px;
+}
+.post {
+	cursor: pointer;
+	position: relative;
+	display: block;
+}
+.post-image {
+	margin: 0;
+}
+.post-image img {
+	width: 100%;
+	vertical-align: top;
+}
+.post-ovarlay {
+	background: rgba(0, 0, 0, .4);
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	text-align: center;
+}
+.post:hover .post-ovarlay {
+	display: flex;
+}
+.post-likes,
+.post-comments {
+	width: 80px;
+	margin: 5px;
+	font-weight: bold;
+	text-align: center;
+	display: inline-block;
+}
+.post-likes {
+	background-image: url('../images/corazon.svg');
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position-x: 2px;
+	background-position-y: center;
+}
+.post-comments {
+	background-image: url('../images/comentario.svg');
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position-x: 2px;
+	background-position-y: center;
+}
+@media screen and (max-width: 768px) {
+	.profile {
+		display: grid;
+		grid-template-columns: 150px 1fr;
+		grid-template-rows: repeat(3, 50px);
+		width: 100%;
+	}
+	.post-list {
+		gap: 3px;
+		width: 100%;
+	}
+	.user-posts,
+	.user-followers,
+	.user-following {
+		display: none;
+	}
+	.edit-button {
+		grid-column: 2;
+		grid-row: 2;
+		justify-self: left;
+		align-self: center;
+		width: 100%;
+	}
+	.edit-button button {
+		width: 100%;
+	}
+	.profile-picture .picture {
+		width: 100px;
+	}
+	.user-name h2 {
+		text-align: center;
+	}
+	header {
+		width: 100%;
+	}
+	.menu-options {
+		width: 100%;
+		grid-template-columns: 95px 1fr 1fr;
+	}
+	.menu-options .search-box input {
+		width: 100%;
+		background-position-x: 25px;
+	}
+	.login-buttons .login,
+	.login-buttons .register {
+		width: 48%;
+	}
+	.insta-logo figure img {
+		width: 85%;
+	}
+}
